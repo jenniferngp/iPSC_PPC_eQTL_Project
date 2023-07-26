@@ -2,8 +2,11 @@ iPSC-PPC eQTL Repository
 
 This repository contains code and scripts for the analyses conducted in the manuscript. 
 
-1. eQTL
-- eQTL mapping pipeline
+0. Other
+- Check numbers in manuscript
+  
+2. eQTL
+- eQTL mapping pipeline (pending)
 - eQTL functional analyses
 - eQTL colocalization
 
