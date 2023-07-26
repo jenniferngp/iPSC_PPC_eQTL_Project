@@ -3,7 +3,7 @@ iPSC-PPC eQTL Repository
 This repository contains code and scripts for the analyses conducted in the manuscript. 
 
 0. Other
-- Check numbers in manuscript
+- "check_numbers.ipynb" shows how to get the numbers in the paper
   
 2. eQTL
 - eQTL mapping pipeline (pending)
