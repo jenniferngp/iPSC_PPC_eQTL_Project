@@ -9,4 +9,4 @@ This repository contains code and scripts for the analyses conducted in the manu
 | liftover.R   | liftover from hg38 -> hg19 (for only GTEx eQTLs)        |
 | finemap.R   | finemap eQTL signals using coloc       |
 | eqtl_networks.R   | generate eQTL networks using igraph        |
-| LD_analysis.ipynb   | perform LD analysis to annotate eQTLs        |
+| LD_analysis.ipynb   | perform LD analysis to re-annotate eQTLs        |
