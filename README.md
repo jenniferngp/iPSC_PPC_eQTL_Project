@@ -10,4 +10,4 @@ This repository contains code and scripts for the analyses conducted in the manu
 | finemap.R   | finemap eQTL signals using coloc       |
 | eqtl_networks.R   | generate eQTL networks using igraph        |
 | LD_analysis.ipynb   | LD analysis and re-annotatation of eQTLs        |
-| run_eqtl.R  | eQTL pipeline (pending)       |
+| run_eqtl.R (pending)   | eQTL pipeline      |
