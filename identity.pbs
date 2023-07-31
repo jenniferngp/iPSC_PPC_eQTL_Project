@@ -1,0 +1,118 @@
+#$ -V
+#$ -cwd
+#$ -e logs
+#$ -o logs
+#$ -pe smp 8
+
+echo "#######################################" >& 2
+
+hostname >& 2
+
+export PATH=/software/tabix-0.2.6:/software/bcftools-1.9:/software/plink-1.90b3x:/software/samtools-1.9/:$PATH$PATH
+
+if [ $# -lt 4 ]; then
+	echo "$0 VCF IN_DIR OUT_DIR SAMPLE_LIST" >& 2;
+	exit 1;
+fi
+reference_vcf=$1
+in_dir=$2
+out_dir=$3
+sample_list=$4
+
+dir=`mktemp -d -p /scratch`
+reference=/reference/public/hg19/hg19.fa
+bam=${in_dir}/Aligned.out.sorted.mdup.bam
+
+date >& 2
+
+if [ ! -d plink ]; then mkdir plink; fi
+
+if [ ! -f plink/target.vcf.gz ]; then
+common_bed=/reference/private/1000Genomes/af_45_to_55.bed
+coding_bed=/reference/private/Gencode.v34lift37/exon.merged.bed
+
+cmd="bedtools intersect -a ${common_bed} -b ${coding_bed} > plink/target.bed"
+eval $cmd >& 2; eval $cmd
+
+date >& 2
+
+cmd="bcftools view -m2 -M2 -v snps -R plink/target.bed -S $sample_list -Ou ${reference_vcf} | bcftools annotate --set-id '%CHROM:%POS' -o plink/target.vcf.gz -Oz ; tabix -p vcf plink/target.vcf.gz"
+eval $cmd >& 2; eval $cmd
+
+else
+echo plink/target.vcf.gz exists! >& 2
+fi
+
+reference_vcf=plink/target.vcf.gz
+
+date >& 2
+
+cmd="cp ${bam}{,.bai} ${dir}/."
+echo $cmd >& 2; eval $cmd
+bam=${dir}/`basename $bam`
+
+date >& 2
+
+cmd="samtools view -H ${dir}/Aligned.out.sorted.mdup.bam > ${dir}/header.sam; awk '{gsub(\"SM:\", \"SM:target\"); print}' ${dir}/header.sam > ${dir}/header.txt"
+#cmd="java -jar /software/picard-2.20.1/picard.jar AddOrReplaceReadGroups I=$bam O=${dir}/out.bam RGSM=target RGLB=lib1 RGPL=illumina RGPU=unit1"
+echo $cmd >& 2; eval $cmd
+
+date >& 2
+
+cmd="samtools reheader ${dir}/header.txt ${bam} > ${dir}/out.bam"
+echo $cmd >& 2; eval $cmd
+
+#date >& 2
+
+cmd="samtools index ${dir}/out.bam"
+echo $cmd >& 2; eval $cmd
+
+date >& 2
+
+cmd="bam=${dir}/out.bam"
+echo $cmd >& 2; eval $cmd
+
+date >& 2
+
+echo "$bam target" > ${dir}/sample.txt
+cat ${dir}/sample.txt >& 2
+cmd="bcftools mpileup -Ou -f $reference -R $reference_vcf --threads 3 $bam |\
+bcftools call --threads 3 -Ou -mv |\
+bcftools filter -e 'DP<10'  | bcftools reheader -s ${dir}/sample.txt |\
+awk 'BEGIN{OFS=\"\t\";} {if(\$1 !~ /^#/) {\$3=\$1\":\"\$2;} print;}' |\
+bgzip -c > ${dir}/call.vcf.gz"
+echo $cmd >& 2; eval $cmd
+
+date >& 2
+
+cmd="tabix -p vcf ${dir}/call.vcf.gz"
+echo $cmd >& 2; eval $cmd
+
+date >& 2
+
+cmd="bcftools merge ${dir}/call.vcf.gz $reference_vcf |\
+bcftools view --threads 3 -m2 -M2 -v snps -o ${dir}/merged.vcf.gz -O z"
+echo $cmd >& 2; eval $cmd
+
+date >& 2
+
+cmd="plink --threads 3 --vcf ${dir}/merged.vcf.gz --make-bed --out ${dir}/merged"
+echo $cmd >& 2; eval $cmd
+
+date >& 2
+
+cmd="plink --threads 3 --bfile ${dir}/merged --genome full --out ${dir}/plink"
+echo $cmd >& 2; eval $cmd
+
+date >& 2
+
+if [ ! -d $out_dir ]; then mkdir $out_dir; fi
+cmd="cp ${dir}/plink.genome ${out_dir}/."
+echo $cmd >& 2; eval $cmd
+
+date >& 2
+
+cmd="rm -rf $dir"
+echo $cmd >& 2; eval $cmd
+
+date >& 2
