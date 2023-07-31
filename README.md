@@ -18,7 +18,7 @@ This repository contains code and scripts for the analyses conducted in the manu
 - This script shows how to identify eQTL modules using colocalized eQTL pairs as input. We performed the community clustering by chromosome to increase sensitivity.
 
 ### LD_analysis.ipynb 
-- This notebook contains commands for how to run LD between pairs of eQTLs and how it was used to update the eQTL annotations.
+- This notebook for LD analysis between eQTL pairs and how it was used to update the eQTL annotations.
 
 ### run_eqtl.R (pending)
 - We are currently organizing our eQTL pipeline and will publish as soon as we can. 
