@@ -25,3 +25,6 @@ This repository contains code and scripts for the analyses conducted in the manu
 
 ### rna_pipeline.pbs
 - Commands for processing bulk RNA-seq data 
+
+### identity.pbs
+- Commands for running sample identity
