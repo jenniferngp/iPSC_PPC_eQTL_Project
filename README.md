@@ -2,7 +2,7 @@ iPSC-PPC eQTL Repository
 
 This repository contains code and scripts for the analyses conducted in the manuscript. 
 
-check_numbers.ipynb 
+*check_numbers.ipynb*
 - This script shows how the numbers in the manuscript were calculated using the supplementary tables.
 
 run_coloc.R 
