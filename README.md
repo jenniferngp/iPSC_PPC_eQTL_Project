@@ -22,3 +22,6 @@ This repository contains code and scripts for the analyses conducted in the manu
 
 ### run_eqtl.R (pending)
 - We are currently organizing our eQTL pipeline and will publish as soon as we can. 
+
+### RNA-seq pipeline
+- Scripts 
