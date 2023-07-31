@@ -2,12 +2,23 @@ iPSC-PPC eQTL Repository
 
 This repository contains code and scripts for the analyses conducted in the manuscript. 
 
-| File      | Description |
-| ----------- | ----------- |
-| check_numbers.ipynb      | how to get the numbers in the paper       |
-| run_coloc.R   | run colocalization using coloc      |
-| liftover.R   | liftover from hg38 -> hg19 (for only GTEx eQTLs)        |
-| finemap.R   | finemap eQTL signals using coloc       |
-| eqtl_networks.R   | generate eQTL networks using igraph        |
-| LD_analysis.ipynb   | LD analysis and re-annotatation of eQTLs        |
-| run_eqtl.R (pending)   | eQTL pipeline      |
+check_numbers.ipynb 
+- This script shows how the numbers in the manuscript were calculated using the supplementary tables.
+
+run_coloc.R 
+- This script shows how colocalization was run in this study. We used p-values, MAF, and N as input to identify shared eQTL and GWAS signals.
+
+liftover.R
+- This script shows how to perform LiftOver from hg38 -> hg19 for GTEx v8 eQTLs.
+
+finemap.R 
+- This script shows how to fine-map eQTL and GWAS signals using p-values, MAF, and N as input.
+
+eqtl_networks.R 
+- This script shows how to identify eQTL modules using colocalized eQTL pairs as input. We performed the community clustering by chromosome to increase sensitivity.
+
+LD_analysis.ipynb 
+- This notebook contains commands for how to run LD between pairs of eQTLs and how it was used to update the eQTL annotations.
+
+run_eqtl.R (pending)
+- We are currently organizing our eQTL pipeline and will publish as soon as we can. 
