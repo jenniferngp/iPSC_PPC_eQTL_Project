@@ -1,8 +1,8 @@
 # iPSC-PPC eQTL Repository
 
-This repository contains code and scripts for the analyses conducted in the manuscript. 
-
 [![DOI](https://zenodo.org/badge/666282159.svg)](https://zenodo.org/badge/latestdoi/666282159)
+
+This repository contains code and scripts for the analyses conducted in the manuscript. 
 
 ### check_numbers.ipynb
 - This script shows how the numbers in the manuscript were calculated using the supplementary tables.
@@ -30,3 +30,4 @@ This repository contains code and scripts for the analyses conducted in the manu
 
 ### identity.pbs
 - Commands for running sample identity
+
