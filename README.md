@@ -23,8 +23,8 @@ See `run_coloc.R `. This script shows how colocalization was run in this study. 
 ## 3. Finemapping eQTL signals
 See `finemap.R`. We fine-mapped each eQTL signal using coloc using p-values, MAF, and N as input. 
 
-## 4. eqtl_networks.R 
-This script shows how to identify eQTL modules using colocalized eQTL pairs as input. We performed the community clustering by chromosome to increase sensitivity.
+## 4. eQTL networks
+See `eqtl_networks.R`. This script shows how to identify eQTL modules using colocalized eQTL pairs as input. We performed the community clustering by chromosome to increase sensitivity.
 
 ## 5. LD_analysis.ipynb 
 This notebook for LD analysis between eQTL pairs and how it was used to update the eQTL annotations.
