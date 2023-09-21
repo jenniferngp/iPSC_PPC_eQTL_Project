@@ -26,11 +26,11 @@ See `finemap.R`. We fine-mapped each eQTL signal using coloc using p-values, MAF
 ## 4. eQTL networks
 See `eqtl_networks.R`. This script shows how to identify eQTL modules using colocalized eQTL pairs as input. We performed the community clustering by chromosome to increase sensitivity.
 
-## 5. LD_analysis.ipynb 
-This notebook for LD analysis between eQTL pairs and how it was used to update the eQTL annotations.
+## 5. LD between iPSC-PPC, adult islet, and adult panc eQTLs
+See `LD_analysis.ipynb`. This notebook for LD analysis between eQTL pairs and how it was used to update the eQTL annotations.
 
-## 6. process_gwas_coloc.R
-Script showing how GWAS colocalization data was processed
+## 6. Process GWAS colocalization results
+See `process_gwas_coloc.R`. This script shows how GWAS colocalization data was processed.
 
 ## 7. check_numbers.ipynb
 This script shows how the numbers in the manuscript were calculated using the supplementary tables.
