@@ -14,7 +14,7 @@ This repository contains code and scripts for the analyses conducted in the manu
 - This script shows how to perform LiftOver from hg38 -> hg19 for GTEx v8 eQTLs.
 
 ### finemap.R 
-- This script shows how to fine-map eQTL and GWAS signals using p-values, MAF, and N as input.
+- This script shows how to fine-map eQTL and GWAS signals using p-values, MAF, and N as input. finemap.abf (from coloc) can only finemap one signal at a time. 
 
 ### eqtl_networks.R 
 - This script shows how to identify eQTL modules using colocalized eQTL pairs as input. We performed the community clustering by chromosome to increase sensitivity.
