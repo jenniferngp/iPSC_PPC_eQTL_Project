@@ -8,10 +8,10 @@ This repository contains code and scripts for the analyses conducted in the manu
 This pipeline was developed by Matteo D'Antonio, PhD.
 We are currently organizing our eQTL pipeline and will publish as soon as we can. 
 
-## 2, Colocalization of eQTLs and GWAS
+## 2. Colocalization of eQTLs and GWAS
 See `run_coloc.R `. This script shows how colocalization was run in this study. We used p-values, MAF, and N as input to identify shared eQTL and GWAS signals.
 
-## 2, Finemapping eQTL signals
+## 2. Finemapping eQTL signals
 See `finemap.R`. We fine-mapped each eQTL signal using coloc using p-values, MAF, and N as input. 
 
 ### check_numbers.ipynb
