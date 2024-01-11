@@ -3,11 +3,7 @@
 [![DOI](https://zenodo.org/badge/666282159.svg)](https://zenodo.org/badge/latestdoi/666282159)
 
 # Analysis
-Contains scripts developed to process and analyze data generated in this study
-
-# Description of Files
-
-This repository contains code and scripts for the analyses conducted in the manuscript. 
+This folder contains scripts that were developed in the study to process and analyze RNA-seq and eQTL data.
 
 0. `rna_pipeline.pbs`: shell commands to process bulk RNA-seq data
 0. `identity.pbs`: shell commands to match bulk RNA-seq sample to the correct donor using WGS calls 
