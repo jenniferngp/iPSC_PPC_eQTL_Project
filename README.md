@@ -9,7 +9,7 @@ Contains scripts developed to process and analyze data generated in this study
 
 This repository contains code and scripts for the analyses conducted in the manuscript. 
 
-`rna_pipeline.pbs`: commands to process bulk RNA-seq data 
+0. `rna_pipeline.pbs`: commands to process bulk RNA-seq data 
 
 
 
