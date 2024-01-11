@@ -18,7 +18,7 @@ This folder contains scripts that were developed in the study.
 
 
 # Figures
-Contains scripts to generate figures in the study
+Contains R jupyter notebooks to generate figures in the study
 
 # Supplemental Tables
 Available on Figshare along with other data (https://figshare.com/projects/Large-scale_eQTL_analysis_of_iPSC-PPC/156987)
