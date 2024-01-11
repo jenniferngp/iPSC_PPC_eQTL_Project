@@ -24,3 +24,6 @@ Available on Figshare along with other data (https://figshare.com/projects/Large
 
 # Reference
 Nguyen JP, Arthur TD, Fujita K, Salgado BM, Donovan MK, Matsui H, Kim JH, D’Antonio-Chronowska A, D’Antonio M, Frazer KA. eQTL mapping in fetal-like pancreatic progenitor cells reveals early developmental insights into diabetes risk. Nature Communications. 2023 Oct 30;14(1):6928.
+
+# Coloc Software
+Giambartolomei C, Vukcevic D, Schadt EE, Franke L, Hingorani AD, Wallace C, Plagnol V. Bayesian test for colocalisation between pairs of genetic association studies using summary statistics. PLoS genetics. 2014 May 15;10(5):e1004383.
