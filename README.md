@@ -21,3 +21,6 @@ Contains scripts to generate figures in the study
 
 # Supplemental Tables
 Available on Figshare along with other data (https://figshare.com/projects/Large-scale_eQTL_analysis_of_iPSC-PPC/156987)
+
+# Reference
+Nguyen JP, Arthur TD, Fujita K, Salgado BM, Donovan MK, Matsui H, Kim JH, D’Antonio-Chronowska A, D’Antonio M, Frazer KA. eQTL mapping in fetal-like pancreatic progenitor cells reveals early developmental insights into diabetes risk. Nature Communications. 2023 Oct 30;14(1):6928.
